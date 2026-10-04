@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Micro-Learning Jam Orang (JO)</title>
+<style>
+:root{--p:#3157d5;--bg:#f5f7fb;--tx:#172033;--mut:#64748b;--ln:#e5e7eb;--ok:#16835b;--bad:#c2414f}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#f7f9ff,#eef2ff);font:16px/1.6 system-ui,Segoe UI,sans-serif;color:var(--tx)}
+.app{max-width:1000px;margin:auto;padding:14px}.bar{position:sticky;top:8px;z-index:5;background:#fffffff2;backdrop-filter:blur(10px);padding:13px;border:1px solid var(--ln);border-radius:18px;box-shadow:0 8px 25px #1e2d5a12}
+.brand{display:flex;justify-content:space-between;gap:10px}.mut{color:var(--mut)}.progress{height:7px;background:#e8ebf4;border-radius:9px;margin-top:9px;overflow:hidden}.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--p),#7585ee);width:0;transition:.4s}
+nav{display:flex;gap:6px;overflow:auto;margin-top:9px}nav button,.btn{border:0;border-radius:11px;padding:9px 13px;cursor:pointer;font-weight:700}nav button{background:#eef1f7;color:#475569;white-space:nowrap}nav button.on,.btn{background:var(--p);color:white}
+.page{display:none;animation:f .35s ease}.page.on{display:block}@keyframes f{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero,.card{background:white;border:1px solid var(--ln);border-radius:22px;box-shadow:0 10px 28px #1e2d5a0b}.hero{text-align:center;padding:55px 25px;margin-top:20px}.hero .ico{font-size:60px}.hero h1{font-size:clamp(34px,7vw,58px);line-height:1.05;margin:12px}.hero p{max-width:680px;margin:auto;color:var(--mut)}
+.card{padding:18px;margin:14px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+h2{font-size:clamp(27px,5vw,40px);margin:5px 0}.ey{font-size:12px;letter-spacing:.13em;color:var(--p);font-weight:800;text-transform:uppercase}.formula{text-align:center;font-size:24px;font-weight:800;background:#f0f3ff;border:1px dashed #aab7f3;padding:15px;border-radius:15px;margin:15px 0}.tip{background:#fff8e8;border:1px solid #f3d993;padding:14px;border-radius:14px}
+.flow{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin:17px 0}.flow span{background:#fff;border:1px solid var(--ln);padding:9px 12px;border-radius:12px}.arrow{color:var(--p)}
+table{width:100%;border-collapse:collapse;background:#fff;overflow:hidden;border-radius:14px}th,td{padding:10px;border-bottom:1px solid var(--ln);text-align:center}th{background:#f0f3ff}.pos{color:var(--ok);font-weight:800}.neg{color:var(--bad);font-weight:800}
+.btnrow{display:flex;justify-content:space-between;margin:18px 0}.secondary{background:#e9edf5;color:#334155}.btn:disabled{opacity:.4}
+input{width:100%;padding:11px;border:1px solid var(--ln);border-radius:11px;margin:4px 0 10px}.result{font-size:20px;font-weight:800;margin-top:10px}
+.quizopt{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--ln);padding:12px;border-radius:12px;margin:7px 0;cursor:pointer}.quizopt.good{background:#effbf5;border-color:#8ad5b8}.quizopt.bad{background:#fff3f4;border-color:#efa3ac}.feedback{padding:12px;border-radius:12px;margin-top:9px}.gloss{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.term{padding:13px;background:#fff;border:1px solid var(--ln);border-radius:13px}.term b{color:var(--p)}
+footer{text-align:center;color:var(--mut);font-size:12px;margin:22px}
+@media(max-width:700px){.grid,.grid3,.gloss{grid-template-columns:1fr}.hero{padding:40px 18px}.flow span{width:100%;text-align:center}.arrow{transform:rotate(90deg)}th,td{font-size:13px;padding:8px 5px}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="bar"><div class="brand"><div><b>📊 Micro-Learning: Jam Orang (JO)</b><br><small class="mut">Pahami • Bandingkan • Hitung • Interpretasikan</small></div><b id="count">Mulai</b></div><div class="progress"><i id="prog"></i></div><nav id="nav"></nav></div>
+
+<section class="page on"><div class="hero"><div class="ico">⏱️</div><small>MICRO-LEARNING</small><h1>Mengenal<br>Jam Orang (JO)</h1><p>Materi interaktif untuk memahami JO, Planned vs Actual, Variance, faktor penyebab selisih, contoh tabel, glosarium, dan quiz.</p><button class="btn" onclick="go(1)" style="margin-top:22px">Mulai Belajar →</button></div></section>
+
+<section class="page"><div class="ey"><span>Bagian 1</span></div><h2>Tujuan Pembelajaran</h2><p class="mut">Setelah selesai, mahasiswa mampu memahami JO dan membaca hubungan antara rencana dan realisasinya.</p>
+<div class="grid"><div class="card">🎯 Menjelaskan pengertian <b>Jam Orang/Man Hours</b>.</div><div class="card">📌 Menjelaskan fungsi JO.</div><div class="card">🔎 Membedakan Planned dan Actual JO.</div><div class="card">🧮 Menghitung Variance JO.</div><div class="card">🛠️ Mengidentifikasi faktor penyebab selisih.</div><div class="card">📋 Membaca data JO dan membedakan JO dengan Jam Mesin.</div></div><div class="tip">💡 Target: bukan hanya mengenali angka JO, tetapi memahami arti, hubungan rencana–realisasi, dan konteks pekerjaan.</div></section>
+
+<section class="page"><div class="ey">Bagian 2</div><h2>Apa Itu Jam Orang?</h2><p class="mut"><b>Jam Orang (JO) atau Man Hours</b> adalah ukuran jumlah waktu kerja yang digunakan tenaga kerja untuk melaksanakan pekerjaan.</p>
+<div class="formula">JO = Jumlah Tenaga Kerja × Waktu Kerja</div><div class="card"><h3>Contoh</h3><p>5 orang bekerja selama 8 jam.</p><div class="formula">5 × 8 = <b>40 JO</b></div><p>Artinya, total waktu kerja manusia adalah 40 Jam Orang.</p></div>
+<div class="grid"><div class="card"><h3>⏱️ Durasi</h3><p>Berapa lama pekerjaan berlangsung.</p></div><div class="card"><h3>👥 JO</h3><p>Total waktu kerja seluruh tenaga kerja.</p></div></div>
+<div class="card"><h3>JO ≠ Durasi</h3><table><tr><th>Orang</th><th>Waktu</th><th>JO</th><th>Durasi</th></tr><tr><td>1</td><td>8 jam</td><td>8</td><td>8 jam</td></tr><tr><td>2</td><td>4 jam</td><td>8</td><td>4 jam</td></tr><tr><td>4</td><td>2 jam</td><td>8</td><td>2 jam</td></tr></table></div></section>
+
+<section class="page"><div class="ey">Bagian 3</div><h2>Fungsi JO</h2><p class="mut">JO menjadi salah satu informasi untuk memahami penggunaan sumber daya manusia dalam pekerjaan/proyek.</p>
+<div class="grid3"><div class="card"><h3>📐 Perencanaan</h3><p>Memperkirakan kebutuhan waktu kerja tenaga manusia.</p></div><div class="card"><h3>👀 Pemantauan</h3><p>Melihat penggunaan waktu kerja selama pekerjaan.</p></div><div class="card"><h3>🎛️ Pengendalian</h3><p>Membandingkan rencana dengan kondisi aktual.</p></div></div><div class="card"><h3>📊 Evaluasi</h3><p>Memahami perbedaan rencana dan realisasi beserta konteksnya.</p></div>
+<div class="flow"><span>Rencana</span><b class="arrow">→</b><span>Perkiraan JO</span><b class="arrow">→</b><span>Pelaksanaan</span><b class="arrow">→</b><span>Actual JO</span><b class="arrow">→</b><span>Perbandingan</span><b class="arrow">→</b><span>Evaluasi</span></div></section>
+
+<section class="page"><div class="ey">Bagian 4</div><h2>Planned vs Actual JO</h2><div class="grid"><div class="card"><h3>📋 Planned JO</h3><p>Jumlah JO yang <b>direncanakan atau diperkirakan</b> untuk menyelesaikan pekerjaan.</p></div><div class="card"><h3>📈 Actual JO</h3><p>Jumlah JO yang <b>tercatat sebagai penggunaan/realisasi</b> selama pelaksanaan sesuai pencatatan.</p></div></div>
+<div class="card"><table><tr><th>Aktivitas</th><th>Planned</th><th>Actual</th></tr><tr><td>A</td><td>500</td><td>550</td></tr><tr><td>B</td><td>300</td><td>280</td></tr></table><p>A: Actual lebih tinggi 50 JO. B: Actual lebih rendah 20 JO.</p></div><div class="tip">💡 Planned = rencana. Actual = realisasi/penggunaan yang tercatat.</div></section>
+
+<section class="page"><div class="ey">Bagian 5</div><h2>Variance JO</h2><p class="mut">Variance adalah selisih antara Actual JO dan Planned JO.</p><div class="formula">Variance = Actual JO − Planned JO</div>
+<div class="grid3"><div class="card"><h3 class="pos">+ Positif</h3><p>Actual lebih besar.</p></div><div class="card"><h3 class="neg">− Negatif</h3><p>Actual lebih kecil.</p></div><div class="card"><h3>0</h3><p>Actual sama dengan Planned.</p></div></div>
+<div class="card"><h3>🧮 Kalkulator Variance</h3><label>Planned JO</label><input id="p" type="number" value="500"><label>Actual JO</label><input id="a" type="number" value="550"><button class="btn" onclick="calc()">Hitung</button><div id="vr" class="result"></div></div><div class="tip">⚠️ Variance positif/negatif tidak langsung berarti baik atau buruk. Lihat penyebab dan konteks pekerjaan.</div></section>
+
+<section class="page"><div class="ey">Bagian 6</div><h2>Faktor Penyebab Selisih</h2><p class="mut">Kondisi pelaksanaan tidak selalu sama dengan rencana.</p><div class="grid"><div class="card">👥 <b>Perubahan jumlah tenaga kerja</b><br>Jumlah tenaga kerja berbeda dari rencana.</div><div class="card">⏱️ <b>Perbedaan waktu pengerjaan</b><br>Waktu berbeda dari perkiraan.</div><div class="card">➕ <b>Perubahan/penambahan pekerjaan</b><br>Lingkup pekerjaan berubah.</div><div class="card">🔧 <b>Perubahan metode kerja</b><br>Metode dapat memengaruhi waktu kerja.</div><div class="card">🔄 <b>Rework</b><br>Pekerjaan dilakukan kembali karena kondisi tertentu.</div><div class="card">⚙️ <b>Kendala teknis/operasional</b><br>Kondisi pelaksanaan memengaruhi pekerjaan.</div></div><div class="flow"><span>Planned</span><b class="arrow">→</b><span>Pelaksanaan</span><b class="arrow">→</b><span>Kondisi aktual</span><b class="arrow">→</b><span>Actual</span><b class="arrow">→</b><span>Selisih</span></div><div class="tip">🔎 <b>Ada selisih → cari konteks → pahami penyebab → jangan langsung menyimpulkan.</b></div></section>
+
+<section class="page"><div class="ey">Bagian 7</div><h2>Contoh Tabel & Latihan</h2><div class="card"><table><tr><th>Aktivitas</th><th>Planned</th><th>Actual</th><th>Variance</th></tr><tr><td>A</td><td>400</td><td>380</td><td class="neg">−20</td></tr><tr><td>B</td><td>500</td><td>550</td><td class="pos">+50</td></tr><tr><td>C</td><td>250</td><td>250</td><td>0</td></tr></table></div>
+<div class="grid"><div class="card"><h3>Latihan 1</h3><p>Planned 600 JO; Actual 630 JO.</p><button class="btn" onclick="ans('x1')">Lihat Jawaban</button><p id="x1" style="display:none" class="pos"><b>+30 JO</b> (630 − 600).</p></div><div class="card"><h3>Latihan 2</h3><p>Planned 750 JO; Actual 700 JO.</p><button class="btn" onclick="ans('x2')">Lihat Jawaban</button><p id="x2" style="display:none" class="neg"><b>−50 JO</b> (700 − 750).</p></div></div></section>
+
+<section class="page"><div class="ey">Bagian 8</div><h2>JO vs Jam Mesin</h2><div class="grid"><div class="card"><div style="font-size:48px">👷</div><h3>Jam Orang</h3><p>Mengukur <b>waktu kerja tenaga manusia</b>.</p><div class="formula">2 orang × 8 jam = 16 JO</div></div><div class="card"><div style="font-size:48px">⚙️</div><h3>Jam Mesin</h3><p>Berkaitan dengan <b>waktu penggunaan/pengoperasian mesin</b>.</p><div class="formula">Mesin digunakan = 8 jam</div></div></div><div class="tip">🔑 JO → manusia. Jam Mesin → mesin. Satu aktivitas dapat memiliki keduanya, tetapi objek pengukurannya berbeda.</div></section>
+
+<section class="page"><div class="ey">Bagian 9</div><h2>Ringkasan & Kunci Micro-Learning</h2><div class="grid"><div class="card">01️⃣ <b>Pahami JO</b><br>JO = Jumlah Tenaga Kerja × Waktu Kerja.</div><div class="card">02️⃣ <b>Bedakan Planned & Actual</b><br>Planned = rencana; Actual = realisasi/penggunaan tercatat.</div><div class="card">03️⃣ <b>Pahami Variance</b><br>Actual − Planned = Variance.</div><div class="card">04️⃣ <b>Jangan langsung menyimpulkan</b><br>Selisih perlu dilihat dalam konteks.</div><div class="card">05️⃣ <b>Baca data secara utuh</b><br>Pekerjaan → Planned → Actual → Variance → konteks.</div><div class="card" style="background:#f0f3ff"><h3>🔑 Kunci</h3><b style="font-size:19px">Pahami → Bandingkan → Hitung → Telusuri → Interpretasikan</b></div></div></section>
+
+<section class="page"><div class="ey">Bagian 10</div><h2>Glosarium</h2><div class="gloss"><div class="term"><b>Jam Orang (JO)</b><br>Total waktu kerja tenaga manusia.</div><div class="term"><b>Man Hours</b><br>Istilah lain untuk Jam Orang.</div><div class="term"><b>Planned JO</b><br>JO yang direncanakan/diperkirakan.</div><div class="term"><b>Actual JO</b><br>JO yang tercatat sebagai penggunaan/realisasi.</div><div class="term"><b>Variance</b><br>Selisih Actual JO dan Planned JO.</div><div class="term"><b>Durasi</b><br>Lama waktu pekerjaan berlangsung.</div><div class="term"><b>Jam Mesin</b><br>Waktu penggunaan/pengoperasian mesin.</div><div class="term"><b>Rework</b><br>Pekerjaan yang dilakukan kembali karena kondisi tertentu.</div><div class="term"><b>Perencanaan</b><br>Penentuan/perkiraan kebutuhan sebelum pekerjaan.</div><div class="term"><b>Pengendalian</b><br>Pemantauan dan perbandingan pelaksanaan terhadap rencana.</div><div class="term"><b>Aktual</b><br>Kondisi/realisasi yang tercatat.</div><div class="term"><b>Tenaga Kerja</b><br>Orang yang terlibat dalam pelaksanaan pekerjaan.</div></div></section>
+
+<section class="page"><div class="ey">Bagian 11</div><h2>Latihan Mandiri (Quiz)</h2><p class="mut">Jawab setiap soal. Feedback muncul otomatis.</p><div id="quiz"></div><div id="scorebox" class="card" style="display:none;text-align:center"><div style="font-size:48px">🎉</div><h3>Quiz selesai!</h3><div id="score" class="result"></div><p id="scoremsg"></p><button class="btn" onclick="resetQuiz()">Ulangi Quiz</button></div></section>
+
+<div class="btnrow"><button id="prev" class="btn secondary" onclick="prev()">← Sebelumnya</button><button id="next" class="btn" onclick="next()">Berikutnya →</button></div>
+<footer>Materi micro-learning Jam Orang (JO). Istilah/data internal perusahaan tetap mengikuti dokumen dan arahan pembimbing yang berwenang.</footer>
+</div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')],names=['Mulai','1. Tujuan','2. Apa itu JO?','3. Fungsi JO','4. Planned vs Actual','5. Variance','6. Faktor Selisih','7. Contoh & Latihan','8. JO vs Mesin','9. Ringkasan','10. Glosarium','11. Quiz'];let cur=0;
+const nav=document.getElementById('nav');names.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>go(i);nav.appendChild(b)});
+function go(i){cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach((p,n)=>p.classList.toggle('on',n==cur));[...nav.children].forEach((b,n)=>b.classList.toggle('on',n==cur));document.getElementById('count').textContent=names[cur];document.getElementById('prog').style.width=(cur/(pages.length-1)*100)+'%';document.getElementById('prev').disabled=cur==0;document.getElementById('next').textContent=cur==pages.length-1?'Selesai':'Berikutnya →';scrollTo({top:0,behavior:'smooth'})}
+function next(){if(cur<pages.length-1)go(cur+1)}function prev(){if(cur>0)go(cur-1)}
+function calc(){let p=+document.getElementById('p').value,a=+document.getElementById('a').value,v=a-p,e=document.getElementById('vr');e.textContent='Variance = '+(v>0?'+':'')+v+' JO';e.className='result '+(v>0?'pos':v<0?'neg':'')}
+function ans(id){document.getElementById(id).style.display='block'}
+const qs=[
+['Apa yang dimaksud dengan Jam Orang (JO)?',['Jumlah orang yang bekerja','Lama pekerjaan berlangsung','Total waktu kerja tenaga manusia dalam suatu pekerjaan','Lama penggunaan mesin'],2,'JO menunjukkan total waktu kerja manusia.'],
+['4 orang bekerja selama 6 jam. Berapa JO?',['10 JO','18 JO','24 JO','30 JO'],2,'4 × 6 = 24 JO.'],
+['Apa yang dimaksud Planned JO?',['JO yang telah terealisasi','JO yang direncanakan atau diperkirakan','Selisih JO dan Jam Mesin','Lama pekerjaan'],1,'Planned berarti rencana/perkiraan.'],
+['Planned JO = 400 dan Actual JO = 450. Variance?',['−50 JO','+50 JO','+850 JO','0 JO'],1,'450 − 400 = +50 JO.'],
+['Planned JO = 600 dan Actual JO = 550. Variance?',['+50 JO','+1.150 JO','−50 JO','0 JO'],2,'550 − 600 = −50 JO.'],
+['Manakah yang dapat menyebabkan perbedaan Planned dan Actual JO?',['Perubahan jumlah tenaga kerja','Warna dokumen','Nama file','Jenis huruf'],0,'Perubahan jumlah tenaga kerja dapat memengaruhi JO.'],
+['Apa perbedaan utama JO dan Jam Mesin?',['JO mengukur mesin, Jam Mesin mengukur manusia','JO mengukur manusia, Jam Mesin mengukur penggunaan mesin','Keduanya sama','Keduanya hanya mengukur durasi'],1,'JO berfokus pada manusia; Jam Mesin pada penggunaan mesin.'],
+['Planned 800 JO dan Actual 850 JO. Kesimpulan tepat?',['Variance −50 JO','Variance +50 JO dan pasti buruk','Variance +50 JO; penyebab perlu dilihat dalam konteks','Tidak ada variance'],2,'850 − 800 = +50 JO; selisih tidak langsung berarti baik atau buruk.']
+];let qi=0,sc=0,done=false;
+function render(){let q=qs[qi];document.getElementById('quiz').innerHTML='<div class="card"><b>Soal '+(qi+1)+' dari '+qs.length+'</b><h3>'+q[0]+'</h3>'+q[1].map((o,i)=>'<button class="quizopt" onclick="answer('+i+')">'+String.fromCharCode(65+i)+'. '+o+'</button>').join('')+'<div id="fb"></div></div>'}
+function answer(i){if(done)return;done=true;let q=qs[qi],bs=[...document.querySelectorAll('.quizopt')],fb=document.getElementById('fb');bs.forEach((b,n)=>{if(n==q[2])b.classList.add('good');if(n==i&&i!=q[2])b.classList.add('bad')});if(i==q[2]){sc++;fb.className='feedback';fb.style.background='#effbf5';fb.textContent='✅ Benar! '+q[3]}else{fb.className='feedback';fb.style.background='#fff3f4';fb.textContent='❌ Belum tepat. '+q[3]}setTimeout(()=>{qi++;done=false;if(qi<qs.length)render();else finish()},1200)}
+function finish(){document.getElementById('quiz').innerHTML='';document.getElementById('scorebox').style.display='block';let pct=sc/qs.length*100;document.getElementById('score').textContent='Skor: '+sc+'/'+qs.length;document.getElementById('scoremsg').textContent=pct>=80?'Mantap! Dasar JO sudah kamu pahami.':pct>=60?'Cukup baik. Ulangi bagian variance dan faktor penyebab jika perlu.':'Yuk ulangi materi, terutama Planned vs Actual dan Variance.'}
+function resetQuiz(){qi=0;sc=0;done=false;document.getElementById('scorebox').style.display='none';render()}
+go(0);render();
+</script>
+</body></html>
